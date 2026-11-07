@@ -1,0 +1,85 @@
+/* ==========================================================
+   БЛОК 1. CSS-змінні (палітра, відступи, шрифти)
+   ========================================================== */
+:root {
+  --color-primary: #8b2e2e;
+  --color-primary-dark: #6e2020;
+  --color-accent: #d9a441;
+  --color-accent-hover: #f0bd5c;
+  --color-text: #2b2118;
+  --color-text-muted: #6b5d4f;
+  --color-background: #faf5ec;
+  --color-surface: #ffffff;
+  --color-border: #e6dccb;
+  --color-on-dark: #f5e6d3;
+  --color-focus: #b45309;
+ 
+  --radius: 12px;
+  --space: 16px;
+  --shadow: 0 2px 8px rgba(43, 33, 24, 0.08);
+ 
+  --font-body: Inter, Arial, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+ 
+/* ==========================================================
+   БЛОК 2. Базові стилі
+   ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+ 
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+ 
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+}
+ 
+p {
+  margin: 0 0 var(--space);
+}
+ 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+ 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+ 
+a {
+  color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+ 
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration-thickness: 2px;
+}
+ 
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
