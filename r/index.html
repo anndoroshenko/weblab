@@ -4,17 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Жива Традиція — ресторан української кухні</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Ресторан «Жива Традиція»</h1>
+    <header class="site-header" id="top">
+        <h1 class="site-title">Ресторан «Жива Традиція»</h1>
+        <p class="site-tagline">Автентична українська кухня у серці міста</p>
+        <a class="button" href="#menu">Переглянути меню</a>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a class="nav-link" href="#about">Про ресторан</a></li>
+                <li><a class="nav-link" href="#menu">Меню</a></li>
+                <li><a class="nav-link" href="#offers">Спеціальні пропозиції</a></li>
+                <li><a class="nav-link" href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
+    <main class="page-content">
+        <section class="section" id="about">
+            <h2 class="section-title">Про ресторан</h2>
+            <p>
+                Наша історія виросла з любові до домашньої кухні та перших
+                сімейних рецептів. Зараз це ресторан, де традиційні смаки
+                залишаються справжніми, а атмосфера завжди нагадує про дім.
+            </p>
+            <p>
+                Ми працюємо лише з місцевими фермерами, тому всі продукти
+                свіжі та якісні. Кожну страву наші кухарі готують
+                з любов'ю та увагою до деталей.
+            </p>
+            <figure class="figure">
+                <img src="images/interior.jpg" alt="Затишний інтер'єр ресторану" width="600">
+                <figcaption class="figure-caption">Головна зала ресторану</figcaption>
+            </figure>
+        </section>
+
+        <section class="section" id="menu">
+            <h2 class="section-title">Меню</h2>
+            <p>Ми пропонуємо добірку класичних страв української кухні.</p>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3 class="card-title">Перші страви</h3>
+                    <ul class="menu-list">
+                        <li>Борщ із пампушками — 140 грн</li>
+                        <li>Курячий бульйон з локшиною — 110 грн</li>
+                        <li>Зелений борщ зі сметаною — 120 грн</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">Основні страви</h3>
+                    <ol class="menu-list">
+                        <li>Деруни зі сметаною — 130 грн</li>
+                        <li>Вареники з картоплею та грибами — 150 грн</li>
+                        <li>Голубці з м'ясом — 180 грн</li>
+                    </ol>
+                </article>
+
+                <article class="card">
+                    <h3 class="card-title">Десерти</h3>
+                    <ul class="menu-list">
+                        <li>Сирники зі сметаною — 110 грн</li>
+                        <li>Медовик — 95 грн</li>
+                        <li>Вареники з вишнями — 125 грн</li>
+                    </ul>
+                </article>
+            </div>
+
+            <figure class="figure">
+                <img src="images/dish.jpg" alt="Страва української кухні на тарілці" width="400">
+                <figcaption class="figure-caption">Страви нашої кухні</figcaption>
+            </figure>
+        </section>
+
+        <section class="section" id="offers">
+            <h2 class="section-title">Спеціальні пропозиції</h2>
+            <div class="card-grid">
+                <aside class="card">
+                    <h3 class="card-title">Бізнес-ланч</h3>
+                    <p>З понеділка по п'ятницю з 12:00 до 15:00: суп, основна страва та компот за 199 грн.</p>
+                </aside>
+                <aside class="card">
+                    <h3 class="card-title">Знижка іменинникам</h3>
+                    <p>У день народження та ще 3 дні після нього діє знижка 15% на все замовлення.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section" id="contacts">
+            <h2 class="section-title">Контакти</h2>
+            <ul class="contact-list">
+                <li>Адреса: м. Прилуки, вул. Соборна, 10</li>
+                <li>Телефон: <a href="tel:+380501234567">+38 (050) 123-45-67</a></li>
+                <li>Графік роботи: щодня з 10:00 до 23:00</li>
+            </ul>
+            <p>
+                Наше розташування на карті:
+                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Google Maps</a>
+            </p>
+        </section>
     </main>
 
-    <footer>
-        <p>© 2026 Ресторан «Жива Традиція»</p>
+    <footer class="site-footer">
+        <p class="footer-text">© 2026 Ресторан «Жива Традиція»</p>
+        <p class="footer-text"><a class="footer-link" href="#top">Нагору</a></p>
     </footer>
 </body>
 </html>
