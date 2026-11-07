@@ -83,3 +83,73 @@ a:hover {
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
+/* ==========================================================
+   БЛОК 3. Шапка, навігація, кнопка
+   ========================================================== */
+.site-header {
+  padding: calc(var(--space) * 3) var(--space);
+  text-align: center;
+  color: #ffffff;
+  background: var(--color-primary);
+}
+ 
+.site-header :focus-visible {
+  outline-color: var(--color-on-dark);
+}
+ 
+.site-title {
+  margin: 0 0 8px;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+}
+ 
+.site-tagline {
+  margin: 0 0 var(--space);
+  font-size: 1.125rem;
+  color: var(--color-on-dark);
+}
+ 
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: var(--color-accent);
+}
+ 
+.button:hover {
+  color: var(--color-text);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-on-dark);
+}
+ 
+.main-nav {
+  margin-top: calc(var(--space) * 2);
+}
+ 
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+.nav-link {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  color: #ffffff;
+  text-decoration: none;
+}
+ 
+.nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-accent);
+}
