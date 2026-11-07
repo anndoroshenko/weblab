@@ -153,3 +153,109 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.12);
   border-color: var(--color-accent);
 }
+/* ==========================================================
+   БЛОК 4. Основний вміст, картки, зображення, контакти
+   ========================================================== */
+.page-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: calc(var(--space) * 2) var(--space);
+}
+ 
+.section {
+  margin-bottom: calc(var(--space) * 3);
+}
+ 
+.section-title {
+  margin: 0 0 var(--space);
+  padding-bottom: 8px;
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-accent);
+}
+ 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space);
+  margin-bottom: var(--space);
+}
+ 
+.card {
+  padding: calc(var(--space) * 1.5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+ 
+.card > :last-child {
+  margin-bottom: 0;
+}
+ 
+.card-title {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+ 
+.menu-list {
+  margin: 0;
+  padding-left: 20px;
+}
+ 
+.menu-list li + li {
+  margin-top: 8px;
+}
+ 
+.figure {
+  margin: var(--space) 0 0;
+}
+ 
+.figure img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+ 
+.figure-caption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+ 
+.contact-list {
+  margin: 0 0 var(--space);
+  padding: 0;
+  list-style: none;
+}
+ 
+.contact-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+ 
+/* ==========================================================
+   БЛОК 5. Футер
+   ========================================================== */
+.site-footer {
+  padding: calc(var(--space) * 2) var(--space);
+  text-align: center;
+  color: var(--color-on-dark);
+  background: var(--color-text);
+}
+ 
+.site-footer :focus-visible {
+  outline-color: var(--color-on-dark);
+}
+ 
+.footer-text {
+  margin: 0 0 8px;
+}
+ 
+.footer-link {
+  color: var(--color-accent);
+}
+ 
+.footer-link:hover {
+  color: var(--color-accent-hover);
+}
