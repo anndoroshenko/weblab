@@ -17,6 +17,7 @@
                 <li><a class="nav-link" href="#about">Про ресторан</a></li>
                 <li><a class="nav-link" href="#menu">Меню</a></li>
                 <li><a class="nav-link" href="#offers">Спеціальні пропозиції</a></li>
+                <li><a class="nav-link" href="#booking">Бронювання</a></li>
                 <li><a class="nav-link" href="#contacts">Контакти</a></li>
             </ul>
         </nav>
@@ -94,6 +95,92 @@
             </div>
         </section>
 
+        <section class="section" id="booking">
+            <h2 class="section-title">Бронювання столика</h2>
+            <p>Оберіть дату, час та кількість гостей, і ми підготуємо для вас столик.</p>
+
+            <form class="request-form card" action="#booking" method="get">
+                <fieldset class="form-group">
+                    <legend class="form-legend">Контактні дані</legend>
+
+                    <div class="form-field">
+                        <label class="form-label" for="guest-name">Ім'я <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="guest-name" name="guest_name" type="text"
+                               minlength="2" maxlength="60" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="guest-phone">Телефон <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="guest-phone" name="guest_phone" type="tel"
+                               pattern="\+380[0-9]{9}" title="Номер у форматі +380501234567"
+                               placeholder="+380501234567" autocomplete="tel" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend class="form-legend">Деталі бронювання</legend>
+
+                    <div class="form-field">
+                        <label class="form-label" for="booking-date">Дата <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="booking-date" name="booking_date" type="date"
+                               min="2026-11-13" max="2027-12-31" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="booking-time">Час (10:00–22:00) <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="booking-time" name="booking_time" type="time"
+                               min="10:00" max="22:00" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="guests">Кількість гостей <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="guests" name="guests" type="number"
+                               min="1" max="12" value="2" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="zone">Зона <span class="required-mark" aria-hidden="true">*</span></label>
+                        <select class="form-control" id="zone" name="zone" required>
+                            <option value="">Оберіть зону</option>
+                            <option value="hall">Основна зала</option>
+                            <option value="terrace">Літня тераса</option>
+                            <option value="window">Столик біля вікна</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="form-field">
+                    <label class="form-label" for="comment">Коментар</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="4" maxlength="300"
+                              placeholder="Наприклад, святкування дня народження"></textarea>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend class="form-legend">Як підтвердити бронь? <span class="required-mark" aria-hidden="true">*</span></legend>
+                    <div class="choice-list">
+                        <div class="choice">
+                            <input id="confirm-call" name="confirm_method" type="radio" value="call" required>
+                            <label for="confirm-call">Телефонним дзвінком</label>
+                        </div>
+                        <div class="choice">
+                            <input id="confirm-sms" name="confirm_method" type="radio" value="sms" required>
+                            <label for="confirm-sms">Повідомленням</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="choice">
+                    <input id="consent" name="consent" type="checkbox" required>
+                    <label for="consent">Погоджуюсь на обробку контактних даних <span class="required-mark" aria-hidden="true">*</span></label>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit">Забронювати столик</button>
+                    <p class="form-note"><span class="required-mark" aria-hidden="true">*</span> — обов'язкові поля</p>
+                </div>
+            </form>
+        </section>
+
         <section class="section" id="contacts">
             <h2 class="section-title">Контакти</h2>
             <ul class="contact-list">
@@ -109,8 +196,10 @@
     </main>
 
     <footer class="site-footer">
-        <p class="footer-text">© 2026 Ресторан «Жива Традиція»</p>
-        <p class="footer-text"><a class="footer-link" href="#top">Нагору</a></p>
+        <div class="footer-inner">
+            <p class="footer-text">© 2026 Ресторан «Жива Традиція»</p>
+            <p class="footer-text"><a class="footer-link" href="#top">Нагору</a></p>
+        </div>
     </footer>
 </body>
 </html>

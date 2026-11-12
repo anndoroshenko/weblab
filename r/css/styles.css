@@ -13,7 +13,14 @@
   --color-border: #e6dccb;
   --color-on-dark: #f5e6d3;
   --color-focus: #b45309;
+<<<<<<< Updated upstream
  
+=======
+  --color-field-border: #8a7a66;
+  --color-error: #b91c1c;
+  --color-error-bg: #fdf2f2;
+
+>>>>>>> Stashed changes
   --radius: 12px;
   --space: 16px;
   --shadow: 0 2px 8px rgba(43, 33, 24, 0.08);
@@ -30,6 +37,7 @@
 *::after {
   box-sizing: border-box;
 }
+<<<<<<< Updated upstream
  
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -37,6 +45,9 @@
   }
 }
  
+=======
+
+>>>>>>> Stashed changes
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -84,7 +95,7 @@ a:hover {
   outline-offset: 3px;
 }
 /* ==========================================================
-   БЛОК 3. Шапка, навігація, кнопка
+   БЛОК 3. Шапка, навігація (Flexbox), кнопка
    ========================================================== */
 .site-header {
   padding: calc(var(--space) * 3) var(--space);
@@ -131,7 +142,9 @@ a:hover {
  
 .nav-list {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 8px;
   margin: 0;
@@ -154,7 +167,7 @@ a:hover {
   border-color: var(--color-accent);
 }
 /* ==========================================================
-   БЛОК 4. Основний вміст, картки, зображення, контакти
+   БЛОК 4. Основний вміст, картки (Grid), зображення, контакти
    ========================================================== */
 .page-content {
   max-width: 1000px;
@@ -176,7 +189,7 @@ a:hover {
  
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: var(--space);
   margin-bottom: var(--space);
 }
@@ -235,7 +248,199 @@ a:hover {
 }
  
 /* ==========================================================
+<<<<<<< Updated upstream
    БЛОК 5. Футер
+=======
+   БЛОК 5. Меню: категорії та картки страв (Grid)
+   ========================================================== */
+.menu-category {
+  margin-bottom: calc(var(--space) * 2);
+  padding: calc(var(--space) * 2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.menu-category-title {
+  margin: 0 0 calc(var(--space) * 1.5);
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: var(--space);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dish-card {
+  padding: var(--space);
+  text-align: center;
+  background: var(--color-background);
+  box-shadow: none;
+}
+
+.dish-image {
+  width: 100%;
+  margin-bottom: 12px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background-color: var(--color-border);
+}
+
+.dish-name {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.dish-price {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.more-button {
+  display: block;
+  margin: var(--space) auto 0;
+  padding: 4px 24px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  background: transparent;
+  cursor: pointer;
+}
+
+.more-button:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-background);
+}
+
+/* ==========================================================
+   БЛОК 6. Форма бронювання (Grid + Flexbox)
+   ========================================================== */
+.request-form {
+  display: grid;
+  gap: calc(var(--space) * 1.5);
+  max-width: 720px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: var(--space);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-legend {
+  margin-bottom: 12px;
+  padding: 0;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.required-mark {
+  color: var(--color-error);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--color-field-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  resize: vertical;
+}
+
+.form-control:hover {
+  border-color: var(--color-primary);
+}
+
+.form-control:focus-visible {
+  border-color: var(--color-primary);
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.form-control:focus:invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.form-control:user-invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.choice-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space);
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.choice input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--color-primary);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.button-primary {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  color: #ffffff;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-accent);
+}
+
+/* ==========================================================
+   БЛОК 7. Футер (Flexbox)
+>>>>>>> Stashed changes
    ========================================================== */
 .site-footer {
   padding: calc(var(--space) * 2) var(--space);
@@ -247,9 +452,23 @@ a:hover {
 .site-footer :focus-visible {
   outline-color: var(--color-on-dark);
 }
+<<<<<<< Updated upstream
  
+=======
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+>>>>>>> Stashed changes
 .footer-text {
-  margin: 0 0 8px;
+  margin: 0;
 }
  
 .footer-link {
