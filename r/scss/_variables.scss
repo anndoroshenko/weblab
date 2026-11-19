@@ -1,0 +1,44 @@
+// ==========================================================
+// _variables.scss: усі повторювані значення проєкту
+// ==========================================================
+
+// Кольори
+$color-primary: #7a3b3b;
+$color-primary-dark: #5e2c2c;
+$color-primary-light: #8a4a45;
+$color-accent: #d9a441;
+$color-accent-hover: #ecbb62;
+$color-text: #3a2f28;
+$color-text-muted: #6f6256;
+$color-background: #f6f0e6;
+$color-surface: #fffdf8;
+$color-border: #e8dccb;
+$color-on-dark: #f3e7d6;
+$color-white: #ffffff;
+$color-focus: #b45309;
+$color-field-border: #8a7a66;
+$color-error: #b91c1c;
+$color-error-bg: #fdf2f2;
+
+// Відступи
+$space-xs: 0.5rem;
+$space-sm: 0.75rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+
+// Радіус та тінь
+$radius-md: 0.875rem;
+$shadow-card: 0 4px 14px rgba(58, 47, 40, 0.08);
+
+// Точки переходу (mobile-first, min-width)
+$bp-tablet: 48rem; // 768px
+$bp-desktop: 64rem; // 1024px
+
+// Максимальна ширина контенту
+$container-width: 62.5rem; // 1000px
+
+// Шрифти
+$font-body: "Nunito", Arial, sans-serif;
+$font-heading: "Playfair Display", Georgia, serif;
