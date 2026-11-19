@@ -514,3 +514,75 @@ a:hover {
 .footer-link:hover {
   color: #ecbb62;
 }
+
+.details-toggle {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.extra-details {
+  margin-bottom: 1rem;
+  border-left: 4px solid #d9a441;
+}
+
+.favorite-button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #7a3b3b;
+  border-radius: 0.875rem;
+  font-weight: 700;
+  color: #7a3b3b;
+  background-color: transparent;
+  cursor: pointer;
+}
+.favorite-button:hover {
+  background-color: #fffdf8;
+}
+.favorite-button.is-active {
+  color: #ffffff;
+  background-color: #7a3b3b;
+}
+.favorite-button.is-active:hover {
+  background-color: #5e2c2c;
+}
+
+.dish-card.is-active {
+  border-color: #d9a441;
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.35);
+}
+
+.stepper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stepper-button {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  border: 2px solid #8a7a66;
+  border-radius: 0.875rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #7a3b3b;
+  background-color: #fffdf8;
+  cursor: pointer;
+}
+.stepper-button:hover {
+  border-color: #7a3b3b;
+  background-color: #f6f0e6;
+}
+
+.stepper-input {
+  flex: 1 1 auto;
+  width: auto;
+  text-align: center;
+  appearance: textfield;
+}
+.stepper-input::-webkit-outer-spin-button, .stepper-input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.is-hidden {
+  display: none;
+}
