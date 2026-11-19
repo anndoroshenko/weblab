@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:build": "sass r/scss/main.scss:r/css/styles.css",
-    "sass:watch": "sass --watch r/scss/main.scss:r/css/styles.css"
-  },
+  "sass:build": "sass --no-source-map r/scss/main.scss:r/css/styles.css",
+  "sass:watch": "sass --watch --no-source-map r/scss/main.scss:r/css/styles.css"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anndoroshenko/weblab.git"
