@@ -1,0 +1,26 @@
+// ==========================================================
+// _mixins.scss: повторювані фрагменти стилів
+// ==========================================================
+@use "variables" as v;
+
+// Медіазапит mobile-first: стилі всередині діють від ширини $breakpoint
+@mixin respond-from($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Помітний обрис фокусу клавіатури
+@mixin focus-outline($color: v.$color-focus, $offset: 3px) {
+  outline: 3px solid $color;
+  outline-offset: $offset;
+}
+
+// Вигляд картки: фон, межа, заокруглення, тінь
+@mixin card-surface($padding: v.$space-lg) {
+  padding: $padding;
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  box-shadow: v.$shadow-card;
+}
