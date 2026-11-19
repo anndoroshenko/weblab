@@ -528,3 +528,86 @@ a {
     color: v.$color-accent-hover;
   }
 }
+// ==========================================================
+// 7. Інтерактивні елементи та класи стану (JavaScript)
+// ==========================================================
+.details-toggle {
+  margin-bottom: v.$space-md;
+  cursor: pointer;
+}
+
+.extra-details {
+  margin-bottom: v.$space-md;
+  border-left: 4px solid v.$color-accent;
+}
+
+.favorite-button {
+  margin-top: v.$space-sm;
+  padding: v.$space-xs v.$space-md;
+  border: 2px solid v.$color-primary;
+  border-radius: v.$radius-md;
+  font-weight: 700;
+  color: v.$color-primary;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: v.$color-surface;
+  }
+
+  &.is-active {
+    color: v.$color-white;
+    background-color: v.$color-primary;
+
+    &:hover {
+      background-color: v.$color-primary-dark;
+    }
+  }
+}
+
+.dish-card {
+  &.is-active {
+    border-color: v.$color-accent;
+    box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.35);
+  }
+}
+
+.stepper {
+  display: flex;
+  gap: v.$space-xs;
+}
+
+.stepper-button {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  border: 2px solid v.$color-field-border;
+  border-radius: v.$radius-md;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: v.$color-primary;
+  background-color: v.$color-surface;
+  cursor: pointer;
+
+  &:hover {
+    border-color: v.$color-primary;
+    background-color: v.$color-background;
+  }
+}
+
+.stepper-input {
+  flex: 1 1 auto;
+  width: auto;
+  text-align: center;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+}
+
+// Класи стану (мають бути в кінці файлу, щоб перекривати інші правила)
+.is-hidden {
+  display: none;
+}

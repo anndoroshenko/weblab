@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="site-header" id="top">
@@ -39,6 +40,21 @@
                 свіжі та якісні. Кожну страву наші кухарі готують
                 з любов'ю та увагою до деталей.
             </p>
+
+            <button class="button button-primary details-toggle" type="button"
+                    aria-expanded="false" aria-controls="extra-details">Показати більше</button>
+            <div class="card extra-details is-hidden" id="extra-details">
+                <h3 class="card-title">Наші традиції</h3>
+                <p>
+                    Хліб і пампушки ми випікаємо щодня зранку за родинним рецептом.
+                    Сметану, молоко та сир нам постачають фермери з навколишніх сіл.
+                </p>
+                <p>
+                    Меню змінюється разом із порами року: навесні в ньому з'являється
+                    зелений борщ, а восени страви з грибами та гарбузом.
+                </p>
+            </div>
+
             <figure class="figure">
                 <img src="images/interior.jpg" alt="Затишний інтер'єр ресторану" width="600">
                 <figcaption class="figure-caption">Головна зала ресторану</figcaption>
@@ -56,16 +72,19 @@
                         <img class="dish-image" src="images/menu/borshch.jpg" alt="Борщ із пампушками">
                         <h4 class="dish-name">Борщ із пампушками</h4>
                         <p class="dish-price">140 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                     <li class="card dish-card">
                         <img class="dish-image" src="images/menu/bulyon.jpg" alt="Курячий бульйон з локшиною">
                         <h4 class="dish-name">Курячий бульйон з локшиною</h4>
                         <p class="dish-price">110 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                     <li class="card dish-card">
                         <img class="dish-image" src="images/menu/zelenyi-borshch.jpg" alt="Зелений борщ зі сметаною">
                         <h4 class="dish-name">Зелений борщ зі сметаною</h4>
                         <p class="dish-price">120 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                 </ul>
                 <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
@@ -78,16 +97,19 @@
                         <img class="dish-image" src="images/menu/deruny.jpg" alt="Деруни зі сметаною">
                         <h4 class="dish-name">Деруни зі сметаною</h4>
                         <p class="dish-price">130 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                     <li class="card dish-card">
                         <img class="dish-image" src="images/menu/vareniky.jpg" alt="Вареники з картоплею та грибами">
                         <h4 class="dish-name">Вареники з картоплею та грибами</h4>
                         <p class="dish-price">150 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                     <li class="card dish-card">
                         <img class="dish-image" src="images/menu/holubtsi.jpg" alt="Голубці з м'ясом">
                         <h4 class="dish-name">Голубці з м'ясом</h4>
                         <p class="dish-price">180 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                 </ul>
                 <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
@@ -100,16 +122,19 @@
                         <img class="dish-image" src="images/menu/syrnyky.jpg" alt="Сирники зі сметаною">
                         <h4 class="dish-name">Сирники зі сметаною</h4>
                         <p class="dish-price">110 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                     <li class="card dish-card">
                         <img class="dish-image" src="images/menu/medovyk.jpg" alt="Медовик">
                         <h4 class="dish-name">Медовик</h4>
                         <p class="dish-price">95 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                     <li class="card dish-card">
                         <img class="dish-image" src="images/menu/vareniky-z-vyshneiu.jpg" alt="Вареники з вишнями">
                         <h4 class="dish-name">Вареники з вишнями</h4>
                         <p class="dish-price">125 грн</p>
+                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
                     </li>
                 </ul>
                 <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
@@ -169,8 +194,14 @@
 
                     <div class="form-field">
                         <label class="form-label" for="guests">Кількість гостей <span class="required-mark" aria-hidden="true">*</span></label>
-                        <input class="form-control" id="guests" name="guests" type="number"
-                               min="1" max="12" value="2" required>
+                        <div class="stepper">
+                            <button class="stepper-button" id="guests-decrease" type="button"
+                                    aria-label="Зменшити кількість гостей">−</button>
+                            <input class="form-control stepper-input" id="guests" name="guests" type="number"
+                                   min="1" max="12" value="2" required>
+                            <button class="stepper-button" id="guests-increase" type="button"
+                                    aria-label="Збільшити кількість гостей">+</button>
+                        </div>
                     </div>
 
                     <div class="form-field">
