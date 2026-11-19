@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Жива Традиція — ресторан української кухні</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,6 +20,7 @@
                 <li><a class="nav-link" href="#about">Про ресторан</a></li>
                 <li><a class="nav-link" href="#menu">Меню</a></li>
                 <li><a class="nav-link" href="#offers">Спеціальні пропозиції</a></li>
+                <li><a class="nav-link" href="#booking">Бронювання</a></li>
                 <li><a class="nav-link" href="#contacts">Контакти</a></li>
             </ul>
         </nav>
@@ -45,39 +49,71 @@
             <h2 class="section-title">Меню</h2>
             <p>Ми пропонуємо добірку класичних страв української кухні.</p>
 
-            <div class="card-grid">
-                <article class="card">
-                    <h3 class="card-title">Перші страви</h3>
-                    <ul class="menu-list">
-                        <li>Борщ із пампушками — 140 грн</li>
-                        <li>Курячий бульйон з локшиною — 110 грн</li>
-                        <li>Зелений борщ зі сметаною — 120 грн</li>
-                    </ul>
-                </article>
+            <article class="menu-category">
+                <h3 class="menu-category-title">Перші страви</h3>
+                <ul class="dish-list">
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/borshch.jpg" alt="Борщ із пампушками">
+                        <h4 class="dish-name">Борщ із пампушками</h4>
+                        <p class="dish-price">140 грн</p>
+                    </li>
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/bulyon.jpg" alt="Курячий бульйон з локшиною">
+                        <h4 class="dish-name">Курячий бульйон з локшиною</h4>
+                        <p class="dish-price">110 грн</p>
+                    </li>
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/zelenyi-borshch.jpg" alt="Зелений борщ зі сметаною">
+                        <h4 class="dish-name">Зелений борщ зі сметаною</h4>
+                        <p class="dish-price">120 грн</p>
+                    </li>
+                </ul>
+                <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
+            </article>
 
-                <article class="card">
-                    <h3 class="card-title">Основні страви</h3>
-                    <ol class="menu-list">
-                        <li>Деруни зі сметаною — 130 грн</li>
-                        <li>Вареники з картоплею та грибами — 150 грн</li>
-                        <li>Голубці з м'ясом — 180 грн</li>
-                    </ol>
-                </article>
+            <article class="menu-category">
+                <h3 class="menu-category-title">Основні страви</h3>
+                <ul class="dish-list">
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/deruny.jpg" alt="Деруни зі сметаною">
+                        <h4 class="dish-name">Деруни зі сметаною</h4>
+                        <p class="dish-price">130 грн</p>
+                    </li>
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/vareniky.jpg" alt="Вареники з картоплею та грибами">
+                        <h4 class="dish-name">Вареники з картоплею та грибами</h4>
+                        <p class="dish-price">150 грн</p>
+                    </li>
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/holubtsi.jpg" alt="Голубці з м'ясом">
+                        <h4 class="dish-name">Голубці з м'ясом</h4>
+                        <p class="dish-price">180 грн</p>
+                    </li>
+                </ul>
+                <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
+            </article>
 
-                <article class="card">
-                    <h3 class="card-title">Десерти</h3>
-                    <ul class="menu-list">
-                        <li>Сирники зі сметаною — 110 грн</li>
-                        <li>Медовик — 95 грн</li>
-                        <li>Вареники з вишнями — 125 грн</li>
-                    </ul>
-                </article>
-            </div>
-
-            <figure class="figure">
-                <img src="images/dish.jpg" alt="Страва української кухні на тарілці" width="400">
-                <figcaption class="figure-caption">Страви нашої кухні</figcaption>
-            </figure>
+            <article class="menu-category">
+                <h3 class="menu-category-title">Десерти</h3>
+                <ul class="dish-list">
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/syrnyky.jpg" alt="Сирники зі сметаною">
+                        <h4 class="dish-name">Сирники зі сметаною</h4>
+                        <p class="dish-price">110 грн</p>
+                    </li>
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/medovyk.jpg" alt="Медовик">
+                        <h4 class="dish-name">Медовик</h4>
+                        <p class="dish-price">95 грн</p>
+                    </li>
+                    <li class="card dish-card">
+                        <img class="dish-image" src="images/menu/vareniky-z-vyshneiu.jpg" alt="Вареники з вишнями">
+                        <h4 class="dish-name">Вареники з вишнями</h4>
+                        <p class="dish-price">125 грн</p>
+                    </li>
+                </ul>
+                <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
+            </article>
         </section>
 
         <section class="section" id="offers">
@@ -92,6 +128,92 @@
                     <p>У день народження та ще 3 дні після нього діє знижка 15% на все замовлення.</p>
                 </aside>
             </div>
+        </section>
+
+        <section class="section" id="booking">
+            <h2 class="section-title">Бронювання столика</h2>
+            <p>Оберіть дату, час та кількість гостей, і ми підготуємо для вас столик.</p>
+
+            <form class="request-form card" action="#booking" method="get">
+                <fieldset class="form-group">
+                    <legend class="form-legend">Контактні дані</legend>
+
+                    <div class="form-field">
+                        <label class="form-label" for="guest-name">Ім'я <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="guest-name" name="guest_name" type="text"
+                               minlength="2" maxlength="60" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="guest-phone">Телефон <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="guest-phone" name="guest_phone" type="tel"
+                               pattern="\+380[0-9]{9}" title="Номер у форматі +380501234567"
+                               placeholder="+380501234567" autocomplete="tel" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend class="form-legend">Деталі бронювання</legend>
+
+                    <div class="form-field">
+                        <label class="form-label" for="booking-date">Дата <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="booking-date" name="booking_date" type="date"
+                               min="2026-11-13" max="2027-12-31" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="booking-time">Час (10:00–22:00) <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="booking-time" name="booking_time" type="time"
+                               min="10:00" max="22:00" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="guests">Кількість гостей <span class="required-mark" aria-hidden="true">*</span></label>
+                        <input class="form-control" id="guests" name="guests" type="number"
+                               min="1" max="12" value="2" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label" for="zone">Зона <span class="required-mark" aria-hidden="true">*</span></label>
+                        <select class="form-control" id="zone" name="zone" required>
+                            <option value="">Оберіть зону</option>
+                            <option value="hall">Основна зала</option>
+                            <option value="terrace">Літня тераса</option>
+                            <option value="window">Столик біля вікна</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="form-field">
+                    <label class="form-label" for="comment">Коментар</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="4" maxlength="300"
+                              placeholder="Наприклад, святкування дня народження"></textarea>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend class="form-legend">Як підтвердити бронь? <span class="required-mark" aria-hidden="true">*</span></legend>
+                    <div class="choice-list">
+                        <div class="choice">
+                            <input id="confirm-call" name="confirm_method" type="radio" value="call" required>
+                            <label for="confirm-call">Телефонним дзвінком</label>
+                        </div>
+                        <div class="choice">
+                            <input id="confirm-sms" name="confirm_method" type="radio" value="sms" required>
+                            <label for="confirm-sms">Повідомленням</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="choice">
+                    <input id="consent" name="consent" type="checkbox" required>
+                    <label for="consent">Погоджуюсь на обробку контактних даних <span class="required-mark" aria-hidden="true">*</span></label>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit">Забронювати столик</button>
+                    <p class="form-note"><span class="required-mark" aria-hidden="true">*</span> — обов'язкові поля</p>
+                </div>
+            </form>
         </section>
 
         <section class="section" id="contacts">
@@ -109,8 +231,10 @@
     </main>
 
     <footer class="site-footer">
-        <p class="footer-text">© 2026 Ресторан «Жива Традиція»</p>
-        <p class="footer-text"><a class="footer-link" href="#top">Нагору</a></p>
+        <div class="footer-inner">
+            <p class="footer-text">© 2026 Ресторан «Жива Традиція»</p>
+            <p class="footer-text"><a class="footer-link" href="#top">Нагору</a></p>
+        </div>
     </footer>
 </body>
 </html>

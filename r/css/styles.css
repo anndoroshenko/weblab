@@ -2,31 +2,28 @@
    БЛОК 1. CSS-змінні (палітра, відступи, шрифти)
    ========================================================== */
 :root {
-  --color-primary: #8b2e2e;
-  --color-primary-dark: #6e2020;
+  --color-primary: #7a3b3b;
+  --color-primary-dark: #5e2c2c;
+  --color-primary-light: #8a4a45;
   --color-accent: #d9a441;
-  --color-accent-hover: #f0bd5c;
-  --color-text: #2b2118;
-  --color-text-muted: #6b5d4f;
-  --color-background: #faf5ec;
-  --color-surface: #ffffff;
-  --color-border: #e6dccb;
-  --color-on-dark: #f5e6d3;
+  --color-accent-hover: #ecbb62;
+  --color-text: #3a2f28;
+  --color-text-muted: #6f6256;
+  --color-background: #f6f0e6;
+  --color-surface: #fffdf8;
+  --color-border: #e8dccb;
+  --color-on-dark: #f3e7d6;
   --color-focus: #b45309;
-<<<<<<< Updated upstream
- 
-=======
   --color-field-border: #8a7a66;
   --color-error: #b91c1c;
   --color-error-bg: #fdf2f2;
 
->>>>>>> Stashed changes
-  --radius: 12px;
+  --radius: 14px;
   --space: 16px;
-  --shadow: 0 2px 8px rgba(43, 33, 24, 0.08);
+  --shadow: 0 4px 14px rgba(58, 47, 40, 0.08);
 
-  --font-body: Inter, Arial, sans-serif;
-  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: "Nunito", Arial, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
 }
 
 /* ==========================================================
@@ -37,21 +34,12 @@
 *::after {
   box-sizing: border-box;
 }
-<<<<<<< Updated upstream
- 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
- 
-=======
 
->>>>>>> Stashed changes
 body {
   margin: 0;
   font-family: var(--font-body);
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.7;
   color: var(--color-text);
   background: var(--color-background);
 }
@@ -96,13 +84,15 @@ a:hover {
 }
 
 /* ==========================================================
-   БЛОК 3. Шапка, навігація, кнопка
+   БЛОК 3. Шапка, навігація (Flexbox), кнопка
    ========================================================== */
 .site-header {
   padding: calc(var(--space) * 3) var(--space);
   text-align: center;
   color: #ffffff;
-  background: var(--color-primary);
+  background-color: var(--color-primary);
+  background-image: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
+  border-bottom: 4px solid var(--color-accent);
 }
 
 .site-header :focus-visible {
@@ -143,7 +133,9 @@ a:hover {
 
 .nav-list {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 8px;
   margin: 0;
@@ -156,18 +148,19 @@ a:hover {
   padding: 8px 16px;
   border: 2px solid transparent;
   border-radius: var(--radius);
+  font-weight: 600;
   color: #ffffff;
   text-decoration: none;
 }
 
 .nav-link:hover {
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.14);
   border-color: var(--color-accent);
 }
 
 /* ==========================================================
-   БЛОК 4. Основний вміст, картки, зображення, контакти
+   БЛОК 4. Основний вміст, картки (Grid), зображення, контакти
    ========================================================== */
 .page-content {
   max-width: 1000px;
@@ -189,7 +182,7 @@ a:hover {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: var(--space);
   margin-bottom: var(--space);
 }
@@ -239,9 +232,6 @@ a:hover {
 }
 
 /* ==========================================================
-<<<<<<< Updated upstream
-   БЛОК 5. Футер
-=======
    БЛОК 5. Меню: категорії та картки страв (Grid)
    ========================================================== */
 .menu-category {
@@ -431,7 +421,6 @@ a:hover {
 
 /* ==========================================================
    БЛОК 7. Футер (Flexbox)
->>>>>>> Stashed changes
    ========================================================== */
 .site-footer {
   padding: calc(var(--space) * 2) var(--space);
@@ -443,9 +432,6 @@ a:hover {
 .site-footer :focus-visible {
   outline-color: var(--color-on-dark);
 }
-<<<<<<< Updated upstream
- 
-=======
 
 .footer-inner {
   display: flex;
@@ -457,9 +443,8 @@ a:hover {
   margin: 0 auto;
 }
 
->>>>>>> Stashed changes
 .footer-text {
-  margin: 0 0 8px;
+  margin: 0;
 }
 
 .footer-link {
