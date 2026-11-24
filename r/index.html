@@ -21,6 +21,7 @@
                 <li><a class="nav-link" href="#about">Про ресторан</a></li>
                 <li><a class="nav-link" href="#menu">Меню</a></li>
                 <li><a class="nav-link" href="#offers">Спеціальні пропозиції</a></li>
+                <li><a class="nav-link" href="#my-dishes">Мої страви</a></li>
                 <li><a class="nav-link" href="#booking">Бронювання</a></li>
                 <li><a class="nav-link" href="#contacts">Контакти</a></li>
             </ul>
@@ -108,6 +109,50 @@
                     <p>У день народження та ще 3 дні після нього діє знижка 15% на все замовлення.</p>
                 </aside>
             </div>
+        </section>
+
+        <section class="section" id="my-dishes">
+            <h2 class="section-title">Мої улюблені страви</h2>
+            <p>
+                Додайте страви, які вам сподобалися або які ви хочете спробувати.
+                Записи зберігаються у вашому браузері.
+            </p>
+
+            <form class="request-form card" id="user-item-form">
+                <div class="form-field">
+                    <label class="form-label" for="user-title">Назва страви <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input class="form-control" id="user-title" name="title" type="text"
+                           required minlength="3" maxlength="80" autocomplete="off">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="user-category">Категорія <span class="required-mark" aria-hidden="true">*</span></label>
+                    <select class="form-control" id="user-category" name="category" required>
+                        <option value="">Оберіть категорію</option>
+                        <option value="first">Перші страви</option>
+                        <option value="main">Основні страви</option>
+                        <option value="dessert">Десерти</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="user-description">Опис <span class="required-mark" aria-hidden="true">*</span></label>
+                    <textarea class="form-control" id="user-description" name="description" rows="4"
+                              required minlength="10" maxlength="500"
+                              placeholder="Чим вам запам'яталася ця страва (від 10 символів)"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button class="button button-primary" type="submit">Додати</button>
+                    <p class="form-note"><span class="required-mark" aria-hidden="true">*</span> — обов'язкові поля</p>
+                </div>
+            </form>
+
+            <p class="user-message" id="user-message" role="status"></p>
+
+            <h3 class="subsection-title">Збережені страви</h3>
+            <div class="user-list" id="user-list"></div>
+            <p class="empty-message" id="user-empty">Власних записів поки немає.</p>
         </section>
 
         <section class="section" id="booking">
