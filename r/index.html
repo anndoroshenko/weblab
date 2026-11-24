@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
 </head>
 <body>
     <header class="site-header" id="top">
@@ -65,80 +65,35 @@
             <h2 class="section-title">Меню</h2>
             <p>Ми пропонуємо добірку класичних страв української кухні.</p>
 
-            <article class="menu-category">
-                <h3 class="menu-category-title">Перші страви</h3>
-                <ul class="dish-list">
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/borshch.jpg" alt="Борщ із пампушками">
-                        <h4 class="dish-name">Борщ із пампушками</h4>
-                        <p class="dish-price">140 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/bulyon.jpg" alt="Курячий бульйон з локшиною">
-                        <h4 class="dish-name">Курячий бульйон з локшиною</h4>
-                        <p class="dish-price">110 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/zelenyi-borshch.jpg" alt="Зелений борщ зі сметаною">
-                        <h4 class="dish-name">Зелений борщ зі сметаною</h4>
-                        <p class="dish-price">120 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                </ul>
-                <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
-            </article>
+            <div class="catalog-controls">
+                <div class="form-field">
+                    <label class="form-label" for="dish-search">Пошук</label>
+                    <input class="form-control" id="dish-search" type="search"
+                           placeholder="Введіть назву або опис страви">
+                </div>
 
-            <article class="menu-category">
-                <h3 class="menu-category-title">Основні страви</h3>
-                <ul class="dish-list">
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/deruny.jpg" alt="Деруни зі сметаною">
-                        <h4 class="dish-name">Деруни зі сметаною</h4>
-                        <p class="dish-price">130 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/vareniky.jpg" alt="Вареники з картоплею та грибами">
-                        <h4 class="dish-name">Вареники з картоплею та грибами</h4>
-                        <p class="dish-price">150 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/holubtsi.jpg" alt="Голубці з м'ясом">
-                        <h4 class="dish-name">Голубці з м'ясом</h4>
-                        <p class="dish-price">180 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                </ul>
-                <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
-            </article>
+                <div class="form-field">
+                    <label class="form-label" for="category-filter">Категорія</label>
+                    <select class="form-control" id="category-filter">
+                        <option value="all">Усі</option>
+                        <option value="first">Перші страви</option>
+                        <option value="main">Основні страви</option>
+                        <option value="dessert">Десерти</option>
+                    </select>
+                </div>
+            </div>
 
-            <article class="menu-category">
-                <h3 class="menu-category-title">Десерти</h3>
-                <ul class="dish-list">
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/syrnyky.jpg" alt="Сирники зі сметаною">
-                        <h4 class="dish-name">Сирники зі сметаною</h4>
-                        <p class="dish-price">110 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/medovyk.jpg" alt="Медовик">
-                        <h4 class="dish-name">Медовик</h4>
-                        <p class="dish-price">95 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                    <li class="card dish-card">
-                        <img class="dish-image" src="images/menu/vareniky-z-vyshneiu.jpg" alt="Вареники з вишнями">
-                        <h4 class="dish-name">Вареники з вишнями</h4>
-                        <p class="dish-price">125 грн</p>
-                        <button class="favorite-button" type="button" aria-pressed="false">Додати в обране</button>
-                    </li>
-                </ul>
-                <button class="more-button" type="button" title="Показати більше" aria-label="Показати більше">• • •</button>
-            </article>
+            <p class="load-status" id="load-status" role="status"></p>
+            <p class="load-error" id="load-error" role="alert" hidden></p>
+            <button class="button button-primary retry-button" id="retry-load" type="button" hidden>
+                Спробувати ще раз
+            </button>
+
+            <p class="results-count" id="results-count" aria-live="polite"></p>
+
+            <div id="menu-catalog" aria-busy="false"></div>
+
+            <p class="empty-message" id="empty-message" hidden>Нічого не знайдено.</p>
         </section>
 
         <section class="section" id="offers">

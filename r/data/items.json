@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Борщ із пампушками",
+    "category": "first",
+    "description": "Наваристий червоний борщ зі сметаною та гарячими пампушками з часником.",
+    "price": 140,
+    "image": "images/menu/borshch.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Курячий бульйон з локшиною",
+    "category": "first",
+    "description": "Прозорий курячий бульйон із домашньою локшиною та свіжою зеленню.",
+    "price": 110,
+    "image": "images/menu/bulyon.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Зелений борщ зі сметаною",
+    "category": "first",
+    "description": "Літній борщ зі щавлем, молодою картоплею та вареним яйцем.",
+    "price": 120,
+    "image": "images/menu/zelenyi-borshch.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Деруни зі сметаною",
+    "category": "main",
+    "description": "Золотисті картопляні деруни, які подаються з холодною сметаною.",
+    "price": 130,
+    "image": "images/menu/deruny.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Вареники з картоплею та грибами",
+    "category": "main",
+    "description": "Домашні вареники з картопляно-грибною начинкою та смаженою цибулею.",
+    "price": 150,
+    "image": "images/menu/vareniky.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Голубці з м'ясом",
+    "category": "main",
+    "description": "Ніжні капустяні голубці з м'ясом і рисом у томатному соусі.",
+    "price": 180,
+    "image": "images/menu/holubtsi.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Сирники зі сметаною",
+    "category": "dessert",
+    "description": "Пухкі сирники з домашнього сиру, які подаються зі сметаною.",
+    "price": 110,
+    "image": "images/menu/syrnyky.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Медовик",
+    "category": "dessert",
+    "description": "Багатошаровий медовий торт із ніжним сметанним кремом.",
+    "price": 95,
+    "image": "images/menu/medovyk.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Вареники з вишнями",
+    "category": "dessert",
+    "description": "Солодкі вареники з соковитою вишнею та цукровою пудрою.",
+    "price": 125,
+    "image": "images/menu/vareniky-z-vyshneiu.jpg"
+  }
+]
