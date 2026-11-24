@@ -1,14 +1,119 @@
 // ==========================================================
-// main.js: взаємодія з DOM та подіями (сайт «Жива Традиція»)
+// main.js: вхідний модуль. Імпортує api.js, catalog.js, utils.js
 // ==========================================================
+import { loadItems } from "./api.js";
+import { filterItems, renderItems, setFavoriteState } from "./catalog.js";
+import { debounce } from "./utils.js";
 
 // ----------------------------------------------------------
-// 1. «Показати більше» / «Приховати» у розділі «Про ресторан»
+// 1. Елементи DOM
 // ----------------------------------------------------------
-const detailsToggle = document.querySelector(".details-toggle");
-const extraDetails = document.querySelector("#extra-details");
+const searchInput = document.querySelector("#dish-search");
+const categorySelect = document.querySelector("#category-filter");
+const grid = document.querySelector("#menu-catalog");
+const resultsCount = document.querySelector("#results-count");
+const emptyMessage = document.querySelector("#empty-message");
+const statusMessage = document.querySelector("#load-status");
+const errorMessage = document.querySelector("#load-error");
+const retryButton = document.querySelector("#retry-load");
 
-if (detailsToggle && extraDetails) {
+// ----------------------------------------------------------
+// 2. Стан застосунку
+// ----------------------------------------------------------
+let items = [];
+let favoriteIds = [];
+
+// ----------------------------------------------------------
+// 3. Оновлення відображення: чиста фільтрація + рендеринг
+// ----------------------------------------------------------
+function updateView() {
+  const filteredItems = filterItems(
+    items,
+    searchInput.value,
+    categorySelect.value
+  );
+
+  renderItems(filteredItems, grid, resultsCount, emptyMessage, favoriteIds);
+}
+
+// ----------------------------------------------------------
+// 4. Завантаження даних: стани «Завантаження» та «Помилка»
+// ----------------------------------------------------------
+async function init() {
+  searchInput.disabled = true;
+  categorySelect.disabled = true;
+  retryButton.disabled = true;
+  retryButton.hidden = true;
+  errorMessage.hidden = true;
+  statusMessage.textContent = "Завантаження…";
+  grid.setAttribute("aria-busy", "true");
+  grid.replaceChildren();
+  resultsCount.textContent = "";
+  emptyMessage.hidden = true;
+
+  let loaded = false;
+
+  try {
+    items = await loadItems();
+    updateView();
+    loaded = true;
+  } catch (error) {
+    items = [];
+    errorMessage.textContent =
+      "Не вдалося завантажити каталог. Спробуйте ще раз.";
+    errorMessage.hidden = false;
+    retryButton.hidden = false;
+    console.error(error);
+  } finally {
+    statusMessage.textContent = "";
+    grid.setAttribute("aria-busy", "false");
+    searchInput.disabled = !loaded;
+    categorySelect.disabled = !loaded;
+    retryButton.disabled = false;
+  }
+}
+
+// ----------------------------------------------------------
+// 5. «Додати в обране»: один обробник на контейнер каталогу.
+// Працює після кожного рендерингу, стан зберігається в масиві.
+// ----------------------------------------------------------
+function handleFavoriteClick(event) {
+  const favoriteButton = event.target.closest(".favorite-button");
+
+  if (!favoriteButton) {
+    return;
+  }
+
+  const card = favoriteButton.closest(".dish-card");
+  const dishId = Number(card.dataset.id);
+  const isActive = !favoriteIds.includes(dishId);
+
+  favoriteIds = isActive
+    ? [...favoriteIds, dishId]
+    : favoriteIds.filter((id) => id !== dishId);
+
+  setFavoriteState(card, favoriteButton, isActive);
+}
+
+// ----------------------------------------------------------
+// 6. Реєстрація обробників (один раз, поза init)
+// ----------------------------------------------------------
+searchInput.addEventListener("input", debounce(updateView, 300));
+categorySelect.addEventListener("change", updateView);
+retryButton.addEventListener("click", init);
+grid.addEventListener("click", handleFavoriteClick);
+
+// ----------------------------------------------------------
+// 7. Взаємодії з лабораторної №5: «Показати більше» та лічильник гостей
+// ----------------------------------------------------------
+function setupDetailsToggle() {
+  const detailsToggle = document.querySelector(".details-toggle");
+  const extraDetails = document.querySelector("#extra-details");
+
+  if (!detailsToggle || !extraDetails) {
+    return;
+  }
+
   detailsToggle.addEventListener("click", () => {
     const isHidden = extraDetails.classList.toggle("is-hidden");
 
@@ -17,38 +122,15 @@ if (detailsToggle && extraDetails) {
   });
 }
 
-// ----------------------------------------------------------
-// 2. «Додати в обране» на картках страв
-// Один обробник на весь розділ меню (делегування подій):
-// працює для кожної кнопки .favorite-button без циклів.
-// ----------------------------------------------------------
-const menuSection = document.querySelector("#menu");
+function setupGuestsCounter() {
+  const guestsInput = document.querySelector("#guests");
+  const guestsDecrease = document.querySelector("#guests-decrease");
+  const guestsIncrease = document.querySelector("#guests-increase");
 
-if (menuSection) {
-  menuSection.addEventListener("click", (event) => {
-    const favoriteButton = event.target.closest(".favorite-button");
+  if (!guestsInput || !guestsDecrease || !guestsIncrease) {
+    return;
+  }
 
-    if (!favoriteButton) {
-      return;
-    }
-
-    const dishCard = favoriteButton.closest(".dish-card");
-    const isActive = favoriteButton.classList.toggle("is-active");
-
-    dishCard.classList.toggle("is-active", isActive);
-    favoriteButton.textContent = isActive ? "В обраному" : "Додати в обране";
-    favoriteButton.setAttribute("aria-pressed", String(isActive));
-  });
-}
-
-// ----------------------------------------------------------
-// 3. Лічильник кількості гостей у формі бронювання
-// ----------------------------------------------------------
-const guestsInput = document.querySelector("#guests");
-const guestsDecrease = document.querySelector("#guests-decrease");
-const guestsIncrease = document.querySelector("#guests-increase");
-
-if (guestsInput && guestsDecrease && guestsIncrease) {
   const minGuests = Number(guestsInput.min);
   const maxGuests = Number(guestsInput.max);
 
@@ -68,3 +150,11 @@ if (guestsInput && guestsDecrease && guestsIncrease) {
     setGuests(Number(guestsInput.value));
   });
 }
+
+setupDetailsToggle();
+setupGuestsCounter();
+
+// ----------------------------------------------------------
+// 8. Запуск
+// ----------------------------------------------------------
+init();
