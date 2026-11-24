@@ -1,12 +1,13 @@
 // ==========================================================
-// main.js: вхідний модуль. Імпортує api.js, catalog.js, utils.js
+// main.js: вхідний модуль. Імпортує api, catalog, utils, userItems
 // ==========================================================
 import { loadItems } from "./api.js";
 import { filterItems, renderItems, setFavoriteState } from "./catalog.js";
 import { debounce } from "./utils.js";
+import { initUserItems } from "./userItems.js";
 
 // ----------------------------------------------------------
-// 1. Елементи DOM
+// 1. Елементи DOM каталогу
 // ----------------------------------------------------------
 const searchInput = document.querySelector("#dish-search");
 const categorySelect = document.querySelector("#category-filter");
@@ -18,7 +19,7 @@ const errorMessage = document.querySelector("#load-error");
 const retryButton = document.querySelector("#retry-load");
 
 // ----------------------------------------------------------
-// 2. Стан застосунку
+// 2. Стан каталогу
 // ----------------------------------------------------------
 let items = [];
 let favoriteIds = [];
@@ -74,8 +75,7 @@ async function init() {
 }
 
 // ----------------------------------------------------------
-// 5. «Додати в обране»: один обробник на контейнер каталогу.
-// Працює після кожного рендерингу, стан зберігається в масиві.
+// 5. «Додати в обране»: один обробник на контейнер каталогу
 // ----------------------------------------------------------
 function handleFavoriteClick(event) {
   const favoriteButton = event.target.closest(".favorite-button");
@@ -96,7 +96,7 @@ function handleFavoriteClick(event) {
 }
 
 // ----------------------------------------------------------
-// 6. Реєстрація обробників (один раз, поза init)
+// 6. Реєстрація обробників каталогу (один раз, поза init)
 // ----------------------------------------------------------
 searchInput.addEventListener("input", debounce(updateView, 300));
 categorySelect.addEventListener("change", updateView);
@@ -155,6 +155,11 @@ setupDetailsToggle();
 setupGuestsCounter();
 
 // ----------------------------------------------------------
-// 8. Запуск
+// 8. Власні записи: ініціалізація незалежно від мережі
+// ----------------------------------------------------------
+initUserItems();
+
+// ----------------------------------------------------------
+// 9. Запуск завантаження каталогу
 // ----------------------------------------------------------
 init();
